@@ -1,12 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const articlesRoutes = require('./routes/articleRoutes')
+const cors = require('cors')
 require('dotenv').config()
+
+const articlesRoutes = require('./routes/articleRoutes')
+
 
 const app = express()
 
 /*  middleware  */
 
+app.use(cors())
 app.use(express.json()) // needed to access req.body
 
 app.use((req, res, next) => {
