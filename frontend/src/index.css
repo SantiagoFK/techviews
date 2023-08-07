@@ -1,0 +1,205 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    font-size: 1.1em;
+}
+
+.navbar
+{
+    display: flex;
+    flex-direction: row;
+    min-height: 3.75em;
+    width: 100%;
+}
+
+.desktop-navbar
+{
+    display: none;
+}
+
+.mobile-side-navbar
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.mobile-side-navbar a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.mobile-side-navbar a:hover
+{
+    color: #f1f1f1;
+}
+
+.close-side-navbar-btn
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+}
+
+.open-side-navbar-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 25%;
+    font-size: 1.3em;
+    outline: 1px solid white;
+    margin-left: auto;
+}
+
+.open-side-navbar-btn:hover
+{
+    cursor: pointer;
+}
+
+.navbarBrand
+{
+    color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 35%;
+    font-size: 1.3em;
+}
+
+.navbarLink
+{
+    color: greenyellow;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+    border-bottom: 1px solid lawngreen;
+    width: 15%;
+}
+
+.navbarLink:hover
+{
+    border-bottom: 2px solid lawngreen;
+}
+
+.home
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.articles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    padding: 10px;
+    min-height: 25em;
+}
+
+.articleDetail
+{
+    /*quitar el margen de abajo del ultimo articulo con un 
+        selector de CSS*/
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 1%;
+    width: 95%;
+    color: snow;
+    box-shadow: 1px 6px 5px greenyellow;
+}
+
+
+.articleTitle
+{
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.articleTitle:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.articleAuthor
+{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.aside
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 1px 6px 5px greenyellow;
+}
+
+.addArticleButton
+{
+    color: white;
+    border: 1px solid white;
+    font-size: 2.5em;
+    border-radius: 50%;
+    padding: 1% 3%; 
+    margin-top: 10px;
+}
+
+.addArticleButton:hover
+{
+    cursor: pointer;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 9.75em;
+    color: white;
+}
+
+@media(min-width: 720px)
+{
+    .navbarBrand
+    {
+        width: 15%;
+    }
+
+    .open-side-navbar-btn
+    {
+        display: none;
+    }
+
+    .desktop-navbar
+    {
+        display: contents;
+    }
+}

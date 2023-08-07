@@ -1,6 +1,6 @@
-import { useState, useEffect , Fragment} from 'react';
+import { useState, useEffect } from 'react';
 
-import { ArticleDetail } from './ArticleDetail'
+import ArticleDetail from './ArticleDetail';
 
 function Home()
 {
@@ -23,17 +23,20 @@ function Home()
 
     return(
         <div className="home">
-            <h1>Home</h1>
             <div className="articles">
-                { articles && articles.map( (article) => 
-                    (
-                        <Fragment>
-                        <p key={article._id}>{article.title}</p>
-                        <p>{article.author}</p>
-                        <p>{article.body}</p>
-                        </Fragment>
-                    )
-                )}
+                { articles && articles.map( (article) => (
+                    <ArticleDetail 
+                    key={article._id} 
+                    article={article}></ArticleDetail>
+                ))}
+                
+                <p className="addArticleButton">+</p>
+
+            </div>
+
+            <div className="aside">
+                <p>Articles: {articles && articles.length}</p>
+                <p>Users: XX</p>
             </div>
         </div>
     );

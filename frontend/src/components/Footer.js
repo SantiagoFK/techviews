@@ -1,7 +1,9 @@
 function Footer()
 {
     return(
-        <p>Footer</p>
+        <div className="footer">
+            <p>Techviews Blog APP &copy; 2023 by SFK</p>
+        </div>
     )
 }
 

@@ -10,27 +10,15 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
-        {/* NAVBAR SECTION */}
-        <header className="header">
-          <Navbar></Navbar>
-        </header>
+        <Navbar></Navbar>
 
-        {/* PAGES SECTION */}
-        <main className="main">
-          
-          <Routes>
-            <Route path='/' Component={Home}>
-            </Route>
+        <Routes>
+          <Route path='/' Component={Home}></Route>
+        </Routes>
 
-          </Routes>
-        </main>
-
-        {/* FOOTER SECTION */}
-        <footer className="footer">
-          <Footer></Footer>
-        </footer>
+        <Footer></Footer>
       </Router>
     </div>
   );
