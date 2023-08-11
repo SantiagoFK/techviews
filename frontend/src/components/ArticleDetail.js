@@ -25,7 +25,9 @@ function ArticleDetail({article})
             <h3 className="articleTitle"> {article.title} </h3>
             <p className="articleBody"> {article.body} </p>
             <p className="articleInfo"> by {article.author}, {formatDistanceToNow(new Date(article.created), {addSuffix:true})}</p>
-            <button onClick={ handleDelete} >Delete</button>
+            <p className="articleDelete"onClick={ handleDelete} >
+            <ion-icon name="trash-bin"></ion-icon>
+            </p>
         </div>
     )
 }

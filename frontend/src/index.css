@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .container
 {
     text-shadow: 0px 0px 2px #111;
@@ -36,6 +42,11 @@
     transition: 0.3s;
 }
 
+.mobile-side-navbar.active
+{
+    width: 250px;
+}
+
 .mobile-side-navbar a{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -50,28 +61,33 @@
     color: #f1f1f1;
 }
 
-.close-side-navbar-btn
-{
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: white;
-}
-
 .open-side-navbar-btn
 {
     display: flex;
     justify-content: center;
     align-items: center;    
     width: 25%;
-    font-size: 1.3em;
-    outline: 1px solid white;
+    color: white;
+    font-size: 1.8em;
     margin-left: auto;
 }
 
 .open-side-navbar-btn:hover
+{
+    cursor: pointer;
+}
+
+.close-side-navbar-btn
+{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+}
+
+.close-side-navbar-btn:hover
 {
     cursor: pointer;
 }
@@ -84,6 +100,7 @@
     align-items: center;    
     width: 35%;
     font-size: 1.3em;
+    margin-left: 10px;
 }
 
 .navbarLink
@@ -105,17 +122,20 @@
 .home
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .articles
 {
+    order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
     padding: 10px;
     min-height: 25em;
 }
@@ -124,20 +144,20 @@
 {
     /*quitar el margen de abajo del ultimo articulo con un 
         selector de CSS*/
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
     width: 95%;
     color: snow;
     background-color: #6528F7;
     border-radius: 10px;
-    /*box-shadow: 1px 6px 5px greenyellow;*/
-    box-shadow:  0px 0px 15px greenyellow;
+    box-shadow:  2px 5px 8px black;
 }
 
 
 .articleTitle
 {
+    margin-top: 0;
     text-align: center;
     font-size: 1.3em;
 }
@@ -153,19 +173,35 @@
     margin: 20px 5px 20px 5px;
 }
 
+.articleDelete
+{
+    width:fit-content;
+    position: relative;
+    font-size: 1.2em;
+    color: yellow;
+    bottom: 0px;
+    left: 90%;
+}
+
+.articleDelete:hover
+{
+    color: red;
+    bottom: 2px;
+}
+
 .aside
 {
+    order: 0;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 90%;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: #6528F7;
-    /*box-shadow: 1px 6px 5px greenyellow;*/
-    box-shadow: 0px 0px 15px greenyellow;
+    box-shadow: 1px 3px 15px aqua;
 }
 
 .createArticle
@@ -220,6 +256,22 @@ textarea:focus
     cursor: pointer;
 }
 
+.mobile-add-article-btn
+{
+    position: fixed;
+    bottom: 0;
+    right: 7px;
+    color: #f1f1f1;  
+    font-size: 4.5em;
+}
+
+.mobile-add-article-btn:hover
+{
+    cursor: pointer;
+    bottom: 2px;
+    color:aqua;
+}
+
 .footer
 {
     background-color: #6528F7;
@@ -251,5 +303,29 @@ textarea:focus
     .createArticle
     {
         display: flex;
+    }
+
+    .home
+    {
+        flex-direction: row;
+        margin-top: 10px;
+    }
+
+    .articles
+    {
+        order: 1;
+    }
+    
+    .aside
+    {
+        order: 2;
+        height: 500px;
+        width: 30%;
+        margin-right: 20px;
+    }
+
+    .mobile-add-article-btn
+    {
+        display: none;
     }
 }

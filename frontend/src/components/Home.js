@@ -36,6 +36,10 @@ function Home()
                     article={article}>
                     </ArticleDetail>
                 ))}
+
+                <div className="mobile-add-article-btn">
+                    <p><ion-icon name="add-circle"></ion-icon></p>
+                </div>
             </div>
 
             <div className="aside">
