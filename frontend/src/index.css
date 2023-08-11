@@ -1,13 +1,16 @@
 .container
 {
+    text-shadow: 0px 0px 2px #111;
     display: flex;
     flex-direction: column;
-    background-color: #111;
+    background: rgb(110,56,171);
+    background: radial-gradient(circle, rgba(110,56,171,1) 0%, rgba(89,0,226,1) 100%, rgba(108,94,97,1) 100%, rgba(117,13,43,1) 100%, rgba(0,0,0,1) 100%);
     font-size: 1.1em;
 }
 
 .navbar
 {
+    background-color: #6528F7;
     display: flex;
     flex-direction: row;
     min-height: 3.75em;
@@ -75,7 +78,7 @@
 
 .navbarBrand
 {
-    color: greenyellow;
+    color: snow;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -85,19 +88,18 @@
 
 .navbarLink
 {
-    color: greenyellow;
+    color: snow;
     font-size: 1.3em;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 1%;
-    border-bottom: 1px solid lawngreen;
     width: 15%;
 }
 
 .navbarLink:hover
 {
-    border-bottom: 2px solid lawngreen;
+    border-bottom: 3px solid greenyellow;
 }
 
 .home
@@ -113,7 +115,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 75%;
     padding: 10px;
     min-height: 25em;
 }
@@ -127,7 +129,10 @@
     padding: 1%;
     width: 95%;
     color: snow;
-    box-shadow: 1px 6px 5px greenyellow;
+    background-color: #6528F7;
+    border-radius: 10px;
+    /*box-shadow: 1px 6px 5px greenyellow;*/
+    box-shadow:  0px 0px 15px greenyellow;
 }
 
 
@@ -143,31 +148,70 @@
     cursor: pointer;
 }
 
-.articleAuthor
+.articleBody
 {
-    text-align: center;
-    font-size: 1.1em;
+    margin: 20px 5px 20px 5px;
 }
 
 .aside
 {
+    border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    width: 16%;
+    width: 20%;
     justify-content: center;
     align-items: center;
     color: white;
-    box-shadow: 1px 6px 5px greenyellow;
+    background-color: #6528F7;
+    /*box-shadow: 1px 6px 5px greenyellow;*/
+    box-shadow: 0px 0px 15px greenyellow;
+}
+
+.createArticle
+{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.basicInput
+{
+    border-radius: 5px;
+    width: 95%;
+    min-height: 25px;
+    background-color: white;
+    border: none;
+}
+
+.basicInput:focus, textarea:focus
+{
+    outline: none;
+    box-shadow: 0px 0px 15px hotpink;
+    transition: all 0.2s;
+}
+
+textarea
+{
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    background-color: white;
+}
+
+textarea:focus
+{
+    outline: none;
 }
 
 .addArticleButton
 {
-    color: white;
+    color: black;
     border: 1px solid white;
     font-size: 2.5em;
     border-radius: 50%;
-    padding: 1% 3%; 
+    padding: 1% 7%; 
     margin-top: 10px;
 }
 
@@ -178,6 +222,7 @@
 
 .footer
 {
+    background-color: #6528F7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,5 +246,10 @@
     .desktop-navbar
     {
         display: contents;
+    }
+
+    .createArticle
+    {
+        display: flex;
     }
 }

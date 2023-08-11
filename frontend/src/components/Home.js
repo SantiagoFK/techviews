@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useArticlesContext } from '../hooks/useArticlesContext';
 
 import ArticleDetail from './ArticleDetail';
+import ArticleForm from './ArticleForm';
 
 function Home()
 {
+    const {articles, dispatch} = useArticlesContext()
+
     /* FETCH ARTICLES FROM API */
-    const [articles, setArticles] = useState(null)
 
     useEffect(function(){
        const fetchArticles = async () => {
@@ -13,12 +16,15 @@ function Home()
             const json = await response.json()
 
             if(response.ok){
-                setArticles(json)
+                dispatch({
+                    type: 'SET_ARTICLES',
+                    payload: json
+                })
             }
        } 
        
        fetchArticles()
-    }, [])
+    }, [dispatch])
     
 
     return(
@@ -27,16 +33,15 @@ function Home()
                 { articles && articles.map( (article) => (
                     <ArticleDetail 
                     key={article._id} 
-                    article={article}></ArticleDetail>
+                    article={article}>
+                    </ArticleDetail>
                 ))}
-                
-                <p className="addArticleButton">+</p>
-
             </div>
 
             <div className="aside">
                 <p>Articles: {articles && articles.length}</p>
                 <p>Users: XX</p>
+                <ArticleForm></ArticleForm>
             </div>
         </div>
     );
