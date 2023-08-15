@@ -244,11 +244,13 @@ textarea:focus
 .addArticleButton
 {
     color: black;
-    border: 1px solid white;
-    font-size: 2.5em;
-    border-radius: 50%;
+    font-size: 1.8em;
     padding: 1% 7%; 
     margin-top: 10px;
+    background-color: whitesmoke;
+    border: 2px solid hotpink;
+    box-shadow:  2px 5px 8px black;
+    border-radius: 10px;
 }
 
 .addArticleButton:hover
@@ -263,6 +265,21 @@ textarea:focus
     right: 7px;
     color: #f1f1f1;  
     font-size: 4.5em;
+}
+
+.mobile-close-article-btn
+{
+    position: fixed;
+    bottom: 0;
+    right: 7px;
+    color: red;  
+    font-size: 4.5em;
+}
+
+.mobile-close-article-btn:hover
+{
+    cursor: pointer;
+    bottom: 2px;
 }
 
 .mobile-add-article-btn:hover
@@ -281,6 +298,31 @@ textarea:focus
     margin-top: 20px;
     min-height: 9.75em;
     color: white;
+}
+
+.dialogArticleForm
+{
+    display: block;
+    border-radius: 10px;
+    position: fixed;
+    top: 10%;
+    z-index: 1;
+    background-color: mediumslateblue;
+    width: 90%;
+    height: 350px;
+    padding: 25px;
+    box-shadow:  5px 8px 15px black;
+    outline: 3px solid white;
+}
+
+.dialogCloseBtn
+{
+    position: relative;
+    width: fit-content;
+    font-size: 2.5em;
+    bottom: 105%;
+    left: 95%;
+    color: aqua;
 }
 
 @media(min-width: 720px)

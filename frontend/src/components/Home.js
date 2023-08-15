@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useArticlesContext } from '../hooks/useArticlesContext';
 
 import ArticleDetail from './ArticleDetail';
 import ArticleForm from './ArticleForm';
+import DialogArticleForm from './DialogArticleForm';
 
 function Home()
 {
-    const {articles, dispatch} = useArticlesContext()
-
     /* FETCH ARTICLES FROM API */
+    const {articles, dispatch} = useArticlesContext()
 
     useEffect(function(){
        const fetchArticles = async () => {
@@ -26,6 +26,12 @@ function Home()
        fetchArticles()
     }, [dispatch])
     
+    /* HANDLES NEW ARTICLE DIALOG IN MOBILE*/
+    const [mobileForm, setMobileForm] = useState(false)
+
+    const handleMobileForm = () => {
+        setMobileForm(!mobileForm)
+    }
 
     return(
         <div className="home">
@@ -37,9 +43,24 @@ function Home()
                     </ArticleDetail>
                 ))}
 
-                <div className="mobile-add-article-btn">
-                    <p><ion-icon name="add-circle"></ion-icon></p>
-                </div>
+                
+                { mobileForm === true ? (
+                    <>
+                        <DialogArticleForm parentCallback = { handleMobileForm }/>
+                        <div className="mobile-close-article-btn">
+                            <p onClick={ handleMobileForm }>
+                                <ion-icon name="close-circle"></ion-icon>
+                            </p>    
+                        </div>
+                    </>
+                ): (
+                    <div className="mobile-add-article-btn">
+                        <p onClick={ handleMobileForm }>
+                            <ion-icon name="add-circle"></ion-icon>
+                        </p>    
+                    </div>
+                )}
+                
             </div>
 
             <div className="aside">

@@ -1,7 +1,7 @@
 import { useState  } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext";
 
-function ArticleForm()
+function ArticleForm(props)
 {
     const { dispatch } = useArticlesContext()
     const [title, setTitle] = useState('');  
@@ -38,13 +38,19 @@ function ArticleForm()
                 payload: json
             })
         }   
+        
+        //close mobile dialog if the form is called in mobile viewport
+        if( props.parentCallback )
+        {
+            props.parentCallback()
+        }
+            
     }
 
     return(
         
         <form className="createArticleForm" onSubmit={ handleSubmit }>
             <div className="createArticle">
-            <h3>New Article</h3>
 
             <input 
                 id = "title"
@@ -78,7 +84,7 @@ function ArticleForm()
                 placeholder="Your post"
             ></textarea>
 
-            <button className="addArticleButton">+</button>
+            <button className="addArticleButton">POST</button>
             </div>
         </form>
     );
